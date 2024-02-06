@@ -2,4 +2,4 @@
 
 ## objetivo
 
-<p>  Objetivo do projeto é realizar um CRUD em uma lista de tarefas</p>
+<p> Objetivo do projeto é realizar um CRUD em uma lista de tarefas</p>
