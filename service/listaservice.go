@@ -21,13 +21,35 @@ func FindAll() []string {
 	return lista
 }
 
-func FindTask() (string, error) {
-	return "", nil
+func FindTask(Task string) (string, error) {
+	var m repository.Mapa
+
+	for chave, valor := range m.Tarefa{
+
+		if valor == Task{
+			return fmt.Sprintf("%v - %s, status: %s\n", chave,m.Tarefa[chave],m.Status[chave]), nil
+		}
+	}
+
+	return "", errors.New("Tarefa não encontrada")
 }
 
-func UpdateStatus() ([]string, error) {
-	return nil, nil
-	
+func UpdateStatus(task,status string) ([]string, error) {
+	var m repository.Mapa
+	var lista []string
+
+	for chave, valor := range m.Tarefa{
+
+		if valor == task{
+
+			m.Status[chave] = status
+			lista = append(lista,fmt.Sprintf("%v - %s, status: %s", chave, m.Tarefa[chave], m.Status[chave]) )
+			return lista, nil
+		}
+		
+	}
+	return nil, errors.New("Não foi possivel atualizar a tarefa porque ela nao existe")
+
 }
 
 func SaveTask(Novatarefa string) {
