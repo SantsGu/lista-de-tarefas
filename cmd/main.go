@@ -16,7 +16,7 @@ import "github.com/SantsGu/lista-de-tarefa/cmd/app"
 
 func main(){
 	
-	app.Routes()
+	app.Build()
 	
 }
 
